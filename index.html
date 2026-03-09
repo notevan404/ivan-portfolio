@@ -1,55 +1,119 @@
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html> <!-- Indica al navegador que el documento usa HTML5 -->
+<html lang="es"> <!-- Elemento raíz de la página y define que el idioma es español -->
 
 <head>
 
-    <meta charset="UTF-8">
-    <title>Ivan Portfolio</title>
+    <meta charset="UTF-8"> <!-- Permite usar caracteres especiales como tildes y ñ -->
+
+    <title>Ivan Portfolio</title> <!-- Título que aparece en la pestaña del navegador -->
+
+    <!-- Conecta el archivo CSS externo con la página -->
     <link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body>
+    <!-- Barra de navegación principal -->
+    <nav>
 
+        <!-- Enlace que lleva a la sección hero (inicio de la página) -->
+        <a href="#hero">Home</a>
+
+        <!-- Enlace a la sección About -->
+        <a href="#about">About</a>
+
+        <!-- Enlace a la sección de tecnologías -->
+        <a href="#technologies">Tech</a>
+
+        <!-- Enlace a la sección de proyectos -->
+        <a href="#projects">Projects</a>
+
+        <!-- Enlace a la sección de contacto -->
+        <a href="#contact">Contact</a>
+
+    </nav>
+
+
+    <!-- Contenedor principal del contenido de la página -->
     <main>
+
+        <!-- Sección principal o "hero" (presentación inicial) -->
         <section id="hero">
-            <h1>Ivan</h1>
-            <h2>Frontend Developer</h2>
-            <p>Building web applications with JavaScript</p>
+            <h1>Ivan</h1> <!-- Nombre principal -->
+            <h2>Frontend Developer</h2> <!-- Rol o especialidad -->
+            <p>Building web applications with JavaScript</p> <!-- Pequeña descripción -->
+
+            <!-- Botón que lleva a la sección de proyectos dentro de la misma página -->
             <a href="#projects">View Projects</a>
+
+            <!-- Botón que abre tu perfil de GitHub en otra pestaña -->
             <a href="https://github.com/notevan404" target="_blank" rel="noopener noreferrer">GitHub</a>
         </section>
 
+        <!-- Sección sobre ti -->
         <section id="about">
-            <h2>About Me</h2>
+            <h2>About Me</h2> <!-- Título de la sección -->
+
+            <!-- Descripción personal -->
             <p>I'm Ivan, a programming student focused on backend and web development.</p>
             <p>My goal is to build useful applications and improve my development skills through real projects.</p>
         </section>
 
+        <!-- Sección de tecnologías -->
         <section id="technologies">
-            <h2>Technologies</h2>
-            <p>Currently learning:</p>
+            <h2>Technologies</h2> <!-- Título -->
+            <p>Currently learning:</p> <!-- Texto introductorio -->
 
+            <!-- Grid que contiene las tarjetas de tecnologías -->
             <div class="tech-grid">
-                <div><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/500px-HTML5_logo_and_wordmark.svg.png" alt=""> HTML</div>
-                <div><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/500px-CSS3_logo_and_wordmark.svg.png" alt=""> CSS</div>
-                <div><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/500px-JavaScript-logo.png" alt=""> JavaScript</div>
-                <div><img src="https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg" alt=""> Java</div>
+
+                <!-- Tarjeta de tecnología: HTML -->
+                <div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/500px-HTML5_logo_and_wordmark.svg.png"
+                        alt="">
+                    HTML
+                </div>
+
+                <!-- Tarjeta de tecnología: CSS -->
+                <div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/500px-CSS3_logo_and_wordmark.svg.png"
+                        alt="">
+                    CSS
+                </div>
+
+                <!-- Tarjeta de tecnología: JavaScript -->
+                <div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/500px-JavaScript-logo.png"
+                        alt="">
+                    JavaScript
+                </div>
+
+                <!-- Tarjeta de tecnología: Java -->
+                <div>
+                    <img src="https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg" alt="">
+                    Java
+                </div>
+
             </div>
         </section>
 
+        <!-- Sección donde irán tus proyectos -->
         <section id="projects">
             <h2>Projects</h2>
+            <!-- Aquí añadirás tus proyectos en el futuro -->
         </section>
 
+        <!-- Sección de contacto -->
         <section id="contact">
             <h2>Contact me</h2>
-            <p>Email: ivan23.dev@gmail.com</p>
+            <p>Email: ivan23.dev@gmail.com</p> <!-- Email de contacto -->
         </section>
+
     </main>
 
-
+    <!-- Conecta el archivo JavaScript externo -->
     <script src="js/script.js"></script>
+
 </body>
 
 </html>
