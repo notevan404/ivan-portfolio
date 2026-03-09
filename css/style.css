@@ -20,8 +20,8 @@ body {
     /* espacio entre líneas de texto */
     padding: 40px;
     /* espacio interno alrededor del contenido */
-    max-width: 900px;
-    /* limita el ancho máximo de la página */
+    max-width: 1100px;
+    /* permite que el portfolio respire más en pantallas grandes */
     margin: auto;
     /* centra el contenido horizontalmente */
 }
@@ -107,38 +107,37 @@ section {
 
 /* Estilo de cada tarjeta de tecnología */
 .tech-grid div {
-    background: #1e293b;
-    /* fondo oscuro de la tarjeta */
-    padding: 25px;
-    /* espacio interno */
-    border-radius: 8px;
-    /* esquinas redondeadas */
-    text-align: center;
-    /* centra el texto */
 
-    display: flex;
-    /* activa flexbox */
-    flex-direction: column;
-    /* coloca elementos uno debajo del otro */
-    align-items: center;
-    /* centra horizontalmente */
-    justify-content: center;
-    /* centra verticalmente */
+    background: #1e293b; /* fondo oscuro de la tarjeta */
+    padding: 25px; /* espacio interno */
+    border-radius: 8px; /* esquinas redondeadas */
 
-    min-height: 140px;
-    /* altura mínima de la tarjeta */
-    transition: transform 0.2s ease, background 0.2s ease;
-    /* animación suave */
+    border: 1px solid transparent; /* borde invisible inicialmente */
+
+    text-align: center; /* centra el texto */
+
+    display: flex; /* activa flexbox */
+    flex-direction: column; /* coloca elementos uno debajo del otro */
+    align-items: center; /* centra horizontalmente */
+    justify-content: center; /* centra verticalmente */
+
+    min-height: 140px; /* altura mínima de la tarjeta */
+
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border 0.25s ease;
+    /* animación suave cuando ocurre hover */
 }
 
 /* Efecto cuando pasas el ratón por encima de una tarjeta */
 .tech-grid div:hover {
-    transform: translateY(-5px);
-    /* mueve la tarjeta hacia arriba */
-    background: #24324a;
-    /* cambia ligeramente el color de fondo */
-}
 
+    transform: translateY(-6px); /* la tarjeta sube ligeramente */
+
+    border: 1px solid #3b82f6; /* aparece un borde azul */
+
+    box-shadow: 0 10px 25px rgba(59,130,246,0.25);
+    /* crea una iluminación azul alrededor de la tarjeta */
+
+}
 /* Sección principal de presentación (hero) */
 #hero {
     min-height: 70vh;
@@ -157,6 +156,15 @@ section {
     /* añade espacio entre los elementos internos */
     margin-bottom: 100px;
     /* espacio debajo del hero */
+    /* gradiente radial suave detrás del contenido */
+    background: radial-gradient(circle at top,
+            rgba(59, 130, 246, 0.15),
+            transparent 70%);
+
+    border-radius: 12px;
+    /* bordes redondeados para que el bloque se vea como una sección */
+    padding: 40px;
+    /* espacio interno para que el contenido respire */
 }
 
 /* Ajuste específico del título dentro del hero */
@@ -258,4 +266,27 @@ nav a::after {
 nav a:hover::after {
     width: 100%;
     /* la línea se expande hasta cubrir todo el enlace */
+}
+
+
+
+
+
+/* Adaptación para pantallas pequeñas (móviles) */
+@media (max-width: 600px) {
+
+  body {
+    padding: 20px; /* menos espacio lateral en móvil */
+  }
+
+  /* las tecnologías pasan a una sola columna */
+  .tech-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* ajustamos el tamaño del título */
+  #hero h1 {
+    font-size: 48px;
+  }
+
 }
