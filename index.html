@@ -53,18 +53,18 @@
         <!-- Sección de presentación principal -->
         <section id="hero" class="hero reveal">
             <!-- Etiqueta breve del rol/perfil -->
-            <p class="hero-label">Frontend Portfolio</p>
+            <p class="hero-label">Portfolio</p>
             <!-- Nombre principal -->
             <h1>Ivan</h1>
             <!-- Propuesta de valor -->
-            <h2>Frontend Developer focused on clean, modern interfaces</h2>
+            <h2>Developer focused on clean, modern interfaces</h2>
             <!-- Resumen del enfoque de trabajo -->
             <p class="hero-copy">I design and build responsive user interfaces with semantic HTML, scalable CSS and
                 JavaScript interactions focused on user experience.</p>
 
             <!-- Puntos clave para reforzar perfil y ocupar mejor el espacio del hero -->
             <div class="hero-highlights" aria-label="Key profile highlights">
-                <span class="hero-pill">Open to Junior Frontend opportunities</span>
+
                 <span class="hero-pill">Based in Spain (Madrid time)</span>
                 <span class="hero-pill">Learning Angular and TypeScript</span>
             </div>
@@ -76,8 +76,11 @@
                 <!-- Enlace externo al perfil de GitHub (nueva pestaña segura) -->
                 <a class="btn btn-ghost btn-github" href="https://github.com/notevan404" target="_blank"
                     rel="noopener noreferrer">
+                    <!-- Contenedor visual del icono dentro del boton -->
                     <span class="btn-icon" aria-hidden="true">
+                        <!-- SVG del logo de GitHub -->
                         <svg viewBox="0 0 16 16" role="img" aria-label="GitHub logo">
+                            <!-- Trazado vectorial del icono -->
                             <path
                                 d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.5-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.5 7.5 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
                         </svg>
@@ -155,13 +158,33 @@
         <section id="contact" class="panel reveal">
             <h2>Contact</h2>
             <p>If you want to collaborate or talk about a project, you can reach me by email or LinkedIn.</p>
-            <p>Based in Spain (Madrid time, CET/CEST).</p>
+            <p class="timezone-row">
+                <span>Based in Spain (Madrid time, CET/CEST).</span>
+                <!-- Badge que muestra la hora actual de Madrid (actualizado por JS) -->
+                <span class="time-badge" aria-live="polite" aria-label="Current time in Madrid">
+                    <!-- Punto animado para indicar que el reloj esta activo -->
+                    <span class="time-dot" aria-hidden="true"></span>
+                    <!-- Contenedor de texto de hora; se rellena desde script.js -->
+                    <span id="spain-time">--:--:--</span>
+                </span>
+            </p>
             <div class="contact-actions">
                 <!-- Enlace mailto para abrir el cliente de correo -->
                 <a class="btn btn-primary" href="mailto:ivan23.dev@gmail.com">ivan23.dev@gmail.com</a>
                 <!-- Enlace al perfil de LinkedIn -->
-                <a class="btn btn-ghost" href="https://www.linkedin.com/in/ivan-perez-403068357/" target="_blank"
-                    rel="noopener noreferrer">LinkedIn</a>
+                <a class="btn btn-ghost btn-linkedin" href="https://www.linkedin.com/in/ivan-perez-403068357/"
+                    target="_blank" rel="noopener noreferrer">
+                    <!-- Contenedor visual del icono dentro del boton -->
+                    <span class="btn-icon" aria-hidden="true">
+                        <!-- SVG del logo de LinkedIn -->
+                        <svg viewBox="0 0 24 24" role="img" aria-label="LinkedIn logo">
+                            <!-- Trazado vectorial del icono -->
+                            <path
+                                d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.03-1.85-3.03-1.85 0-2.13 1.45-2.13 2.94v5.66H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.61 0 4.27 2.38 4.27 5.47v6.27zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z" />
+                        </svg>
+                    </span>
+                    <span>LinkedIn</span>
+                </a>
             </div>
         </section>
     </main>
@@ -169,6 +192,7 @@
     <!-- Pie de página con enlaces clave y marca personal -->
     <footer class="site-footer">
         <p>&copy; 2026 notevan404</p>
+        <!-- Enlaces rapidos a canales de contacto y perfiles -->
         <div class="footer-links">
             <a href="mailto:ivan23.dev@gmail.com">Email</a>
             <a href="https://github.com/notevan404" target="_blank" rel="noopener noreferrer">GitHub</a>

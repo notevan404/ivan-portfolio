@@ -52,3 +52,25 @@ if ("IntersectionObserver" in window && revealItems.length) {
 	// Fallback: si no hay soporte, muestra todo sin animación por scroll
 	revealItems.forEach((item) => item.classList.add("is-visible"));
 }
+
+// Reloj en vivo de la hora de Madrid (Espana)
+const spainTime = document.getElementById("spain-time");
+
+if (spainTime) {
+	// Formateador 24h para mostrar hora local de Madrid
+	const madridFormatter = new Intl.DateTimeFormat("en-GB", {
+		timeZone: "Europe/Madrid",
+		hour: "2-digit",
+		minute: "2-digit",
+		second: "2-digit",
+		hour12: false,
+	});
+
+	const updateMadridTime = () => {
+		spainTime.textContent = madridFormatter.format(new Date());
+	};
+
+	// Pinta la hora al cargar y luego la refresca cada segundo
+	updateMadridTime();
+	window.setInterval(updateMadridTime, 1000);
+}

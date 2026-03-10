@@ -180,8 +180,7 @@ section {
     position: relative;
 }
 
-/* Two decorative badges to add playful energy without extra HTML nodes. */
-.hero::before,
+/* Badge decorativo inferior del hero sin nodos extra en el HTML */
 .hero::after {
     position: absolute;
     font-family: "JetBrains Mono", monospace;
@@ -191,14 +190,6 @@ section {
     border-radius: 999px;
     padding: 0.2rem 0.55rem;
     background: var(--panel-alt);
-}
-
-/* Badge superior decorativo */
-.hero::before {
-    content: "100% Frontend";
-    top: -13px;
-    left: 28px;
-    transform: rotate(-4deg);
 }
 
 /* Badge inferior decorativo */
@@ -363,6 +354,14 @@ h1 {
     background: var(--accent-yellow);
 }
 
+/* Detalle visual específico del botón de LinkedIn en contacto */
+.btn-linkedin .btn-icon {
+    padding: 0.08rem;
+    border: 2px solid var(--border);
+    border-radius: 999px;
+    background: #d9ecff;
+}
+
 /* Encabezado de sección */
 h2 {
     font-size: clamp(1.3rem, 2.2vw, 1.95rem);
@@ -380,6 +379,39 @@ h2 {
     color: var(--ink-soft);
     font-weight: 700;
     max-width: 70ch;
+}
+
+/* Línea con texto de zona horaria y reloj en vivo */
+.timezone-row {
+    margin-top: 0.45rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+/* Badge de hora actual de Madrid */
+.time-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    border: 2px solid var(--border);
+    border-radius: 999px;
+    padding: 0.2rem 0.6rem;
+    background: var(--panel-alt);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.73rem;
+    font-weight: 700;
+    color: var(--ink);
+}
+
+.time-dot {
+    width: 0.48rem;
+    height: 0.48rem;
+    border-radius: 50%;
+    background: var(--accent-green);
+    box-shadow: 0 0 0 0 rgba(114, 241, 167, 0.7);
+    animation: pulse 1.8s ease-out infinite;
 }
 
 /* Contenedor de chips para la sección Currently Learning */
@@ -401,6 +433,7 @@ h2 {
     font-family: "JetBrains Mono", monospace;
     font-size: 0.74rem;
     font-weight: 700;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
 .learning-chip:nth-child(odd) {
@@ -409,6 +442,13 @@ h2 {
 
 .learning-chip:nth-child(even) {
     transform: rotate(1deg);
+}
+
+/* Hover para dar interacción visual a los chips */
+.learning-chip:hover {
+    transform: translateY(-3px) rotate(0deg);
+    background: var(--accent-yellow);
+    box-shadow: 3px 3px 0 rgba(24, 32, 51, 0.22);
 }
 
 /* Grid para tarjetas de tecnologías */
@@ -578,6 +618,7 @@ h2 {
         gap: 0.45rem;
     }
 
+    /* Reduce ligeramente el tamano de los chips del hero en movil */
     .hero-pill {
         font-size: 0.69rem;
     }
@@ -595,5 +636,21 @@ h2 {
     .site-footer {
         justify-content: center;
         text-align: center;
+    }
+}
+
+/* Pulso suave del indicador del reloj */
+@keyframes pulse {
+
+    0% {
+        box-shadow: 0 0 0 0 rgba(114, 241, 167, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 7px rgba(114, 241, 167, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(114, 241, 167, 0);
     }
 }
