@@ -1,3 +1,4 @@
+/* Variables globales de color y tema visual */
 :root {
     --bg-1: #d9ff4f;
     --bg-2: #6bf3ff;
@@ -12,16 +13,19 @@
     --accent-blue: #57a6ff;
 }
 
+/* Reset básico para evitar estilos por defecto inconsistentes entre navegadores */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Desplazamiento suave al navegar por anclas (#id) */
 html {
     scroll-behavior: smooth;
 }
 
+/* Estilos generales del documento */
 body {
     font-family: "Nunito", sans-serif;
     color: var(--ink);
@@ -34,12 +38,14 @@ body {
         linear-gradient(135deg, var(--bg-1), var(--bg-2));
 }
 
+/* Contenedor central del contenido principal */
 main {
     width: min(1080px, 92%);
     margin: 0 auto;
     padding: 2rem 0 4rem;
 }
 
+/* Estilo base de las esferas decorativas de fondo */
 .bg-orb {
     position: fixed;
     border-radius: 50%;
@@ -48,6 +54,7 @@ main {
     mix-blend-mode: multiply;
 }
 
+/* Primera esfera: lado izquierdo superior con animación flotante */
 .orb-1 {
     width: 260px;
     height: 260px;
@@ -57,6 +64,7 @@ main {
     animation: drift 7s ease-in-out infinite;
 }
 
+/* Segunda esfera: lado derecho inferior con animación invertida */
 .orb-2 {
     width: 320px;
     height: 320px;
@@ -66,6 +74,7 @@ main {
     animation: drift 9s ease-in-out infinite reverse;
 }
 
+/* Header pegajoso para mantener la navegación visible al hacer scroll */
 .site-header {
     position: sticky;
     top: 0;
@@ -75,6 +84,7 @@ main {
     border-bottom: 3px solid var(--border);
 }
 
+/* Barra de navegación: distribuye logo y enlaces */
 .main-nav {
     width: min(1080px, 92%);
     margin: 0 auto;
@@ -85,6 +95,7 @@ main {
     gap: 1rem;
 }
 
+/* Marca/logo del sitio */
 .brand {
     font-family: "Bungee", cursive;
     color: var(--ink);
@@ -94,12 +105,14 @@ main {
     transform: rotate(-2deg);
 }
 
+/* Contenedor de enlaces de navegación */
 .nav-links {
     display: flex;
     align-items: center;
     gap: 0.8rem;
 }
 
+/* Estilo individual de cada enlace del menú */
 .nav-links a {
     text-decoration: none;
     color: var(--ink);
@@ -112,19 +125,23 @@ main {
     transition: transform 0.2s ease, background 0.2s ease;
 }
 
+/* Rota enlaces pares para efecto visual dinámico */
 .nav-links a:nth-child(2n) {
     transform: rotate(-2deg);
 }
 
+/* Rota enlaces impares en sentido opuesto */
 .nav-links a:nth-child(2n + 1) {
     transform: rotate(2deg);
 }
 
+/* Efecto hover: destaca enlace y corrige rotación */
 .nav-links a:hover {
     background: var(--accent-yellow);
     transform: translateY(-2px) rotate(0deg);
 }
 
+/* Botón de menú hamburguesa (visible en móvil) */
 .menu-toggle {
     display: none;
     border: 2px solid var(--border);
@@ -137,10 +154,12 @@ main {
     cursor: pointer;
 }
 
+/* Separación vertical entre secciones */
 section {
     margin-top: 2.6rem;
 }
 
+/* Base visual compartida entre hero y paneles */
 .hero,
 .panel {
     background:
@@ -151,6 +170,7 @@ section {
     box-shadow: 8px 8px 0 rgba(24, 32, 51, 0.28);
 }
 
+/* Hero: sección principal con distribución de contenido */
 .hero {
     min-height: 72vh;
     display: grid;
@@ -173,6 +193,7 @@ section {
     background: var(--panel-alt);
 }
 
+/* Badge superior decorativo */
 .hero::before {
     content: "100% Frontend";
     top: -13px;
@@ -180,6 +201,7 @@ section {
     transform: rotate(-4deg);
 }
 
+/* Badge inferior decorativo */
 .hero::after {
     content: "";
     bottom: -13px;
@@ -188,6 +210,7 @@ section {
     background: var(--accent-yellow);
 }
 
+/* Etiqueta pequeña superior del hero */
 .hero-label {
     font-family: "JetBrains Mono", monospace;
     font-size: 0.78rem;
@@ -196,6 +219,7 @@ section {
     color: var(--ink-soft);
 }
 
+/* Tipografía de encabezados principales */
 h1,
 h2,
 h3 {
@@ -203,6 +227,7 @@ h3 {
     letter-spacing: 0.01em;
 }
 
+/* Título principal del hero */
 h1 {
     font-size: clamp(2.6rem, 9vw, 5.6rem);
     line-height: 0.98;
@@ -210,18 +235,21 @@ h1 {
     text-shadow: 3px 3px 0 var(--accent-green);
 }
 
+/* Subtítulo del hero */
 .hero h2 {
     font-size: clamp(1rem, 2.6vw, 1.55rem);
     max-width: 30ch;
     color: #253459;
 }
 
+/* Texto descriptivo del hero */
 .hero-copy {
     max-width: 62ch;
     color: var(--ink-soft);
     font-weight: 700;
 }
 
+/* Fila de botones del hero */
 .hero-actions {
     margin-top: 0.8rem;
     display: flex;
@@ -229,6 +257,15 @@ h1 {
     gap: 0.8rem;
 }
 
+/* Fila de acciones en la sección de contacto */
+.contact-actions {
+    margin-top: 0.8rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+/* Estilo base reutilizable de botones */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -241,41 +278,49 @@ h1 {
     transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
+/* Animación al pasar el cursor sobre botones */
 .btn:hover {
     transform: translateY(-3px) rotate(-1deg);
     box-shadow: 4px 4px 0 rgba(24, 32, 51, 0.22);
 }
 
+/* Variante principal de botón (rosa) */
 .btn-primary {
     background: var(--accent-pink);
     color: #ffffff;
 }
 
+/* Hover específico de botón principal */
 .btn-primary:hover {
     background: #f2418e;
 }
 
+/* Variante secundaria/ghost de botón */
 .btn-ghost {
     background: var(--panel-alt);
     color: var(--ink);
 }
 
+/* Encabezado de sección */
 h2 {
     font-size: clamp(1.3rem, 2.2vw, 1.95rem);
     margin-bottom: 0.5rem;
     color: var(--ink);
 }
 
+/* Caja de contenido para secciones tipo panel */
 .panel {
     padding: clamp(1rem, 2.4vw, 2rem);
 }
 
+/* Párrafos dentro de paneles */
 .panel p {
     color: var(--ink-soft);
     font-weight: 700;
     max-width: 70ch;
 }
 
+/* Grid para tarjetas de tecnologías */
 .tech-grid {
     margin-top: 1rem;
     display: grid;
@@ -283,6 +328,7 @@ h2 {
     gap: 0.95rem;
 }
 
+/* Tarjeta individual de tecnología */
 .tech-card {
     background: var(--panel-alt);
     border: 2px solid var(--border);
@@ -295,6 +341,7 @@ h2 {
     transition: transform 0.22s ease, background 0.22s ease;
 }
 
+/* Rotaciones leves para aspecto orgánico de cada tarjeta */
 .tech-card:nth-child(1) {
     transform: rotate(-1deg);
 }
@@ -311,29 +358,35 @@ h2 {
     transform: rotate(-1.4deg);
 }
 
+/* Hover de tarjeta: la eleva y elimina inclinación */
 .tech-card:hover {
     transform: translateY(-5px) rotate(0deg);
     background: #fff;
 }
 
+/* Tamaño uniforme para logos dentro de tarjetas */
 .tech-card img {
     width: 58px;
     height: 58px;
     object-fit: contain;
 }
 
+/* Estado inicial para animación de aparición al hacer scroll */
 .reveal {
     opacity: 0;
     transform: translateY(18px) scale(0.98);
     transition: opacity 0.55s ease, transform 0.55s ease;
 }
 
+/* Estado visible que aplica el JS cuando el elemento entra en pantalla */
 .reveal.is-visible {
     opacity: 1;
     transform: translateY(0) scale(1);
 }
 
+/* Animación vertical suave para esferas decorativas */
 @keyframes drift {
+
     0%,
     100% {
         transform: translateY(0);
@@ -344,11 +397,15 @@ h2 {
     }
 }
 
+/* Reglas responsive para pantallas pequeñas */
 @media (max-width: 760px) {
+
+    /* Muestra el botón de menú en móvil */
     .menu-toggle {
         display: inline-block;
     }
 
+    /* Menú desplegable móvil: oculto por defecto */
     .nav-links {
         position: absolute;
         right: 4%;
@@ -366,26 +423,31 @@ h2 {
         transition: opacity 0.2s ease, transform 0.2s ease;
     }
 
+    /* En móvil, elimina rotaciones para mejorar legibilidad */
     .nav-links a,
     .nav-links a:nth-child(2n),
     .nav-links a:nth-child(2n + 1) {
         transform: rotate(0deg);
     }
 
+    /* Estado abierto del menú móvil (controlado por JS) */
     .nav-links.open {
         opacity: 1;
         pointer-events: auto;
         transform: translateY(0);
     }
 
+    /* Ajusta altura mínima del hero en móvil */
     .hero {
         min-height: 62vh;
     }
 
+    /* Reubica badge inferior para no salir del contenedor */
     .hero::after {
         right: 14px;
     }
 
+    /* En móvil, una sola columna de tecnologías */
     .tech-grid {
         grid-template-columns: 1fr;
     }

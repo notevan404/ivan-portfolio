@@ -1,24 +1,44 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+    <!-- Configura la codificación de caracteres para soportar tildes y ñ -->
     <meta charset="UTF-8">
+    <!-- Hace que el diseño sea responsive en móviles -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título que aparece en la pestaña del navegador -->
     <title>Ivan Portfolio</title>
+
+    <!-- Preconexión a Google Fonts para mejorar el tiempo de carga -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Preconexión al host estático de fuentes (requiere crossorigin) -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Nunito:wght@500;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <!-- Carga de tipografías usadas en el sitio -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bungee&family=Nunito:wght@500;700;800&family=JetBrains+Mono:wght@500&display=swap"
+        rel="stylesheet">
+    <!-- Hoja de estilos principal del proyecto -->
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
+    <!-- Elementos decorativos de fondo (ocultos a lectores de pantalla) -->
     <div class="bg-orb orb-1" aria-hidden="true"></div>
     <div class="bg-orb orb-2" aria-hidden="true"></div>
 
+    <!-- Encabezado fijo con navegación principal -->
     <header class="site-header">
         <nav class="main-nav">
+            <!-- Marca/logo que lleva al inicio (sección hero) -->
             <a class="brand" href="#hero">Ivan.dev</a>
-            <button id="menu-toggle" class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-links">
+
+            <!-- Botón para abrir/cerrar menú en móvil -->
+            <button id="menu-toggle" class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false"
+                aria-controls="nav-links">
                 Menu
             </button>
+
+            <!-- Lista de enlaces de navegación interna -->
             <div id="nav-links" class="nav-links">
                 <a href="#about">About</a>
                 <a href="#technologies">Tech</a>
@@ -28,39 +48,68 @@
         </nav>
     </header>
 
+    <!-- Contenido principal de la página -->
     <main>
+        <!-- Sección de presentación principal -->
         <section id="hero" class="hero reveal">
+            <!-- Etiqueta breve del rol/perfil -->
             <p class="hero-label">Frontend Portfolio</p>
+            <!-- Nombre principal -->
             <h1>Ivan</h1>
+            <!-- Propuesta de valor -->
             <h2>Frontend Developer focused on clean, modern interfaces</h2>
-            <p class="hero-copy">I design and build responsive user interfaces with semantic HTML, scalable CSS and JavaScript interactions focused on user experience.</p>
+            <!-- Resumen del enfoque de trabajo -->
+            <p class="hero-copy">I design and build responsive user interfaces with semantic HTML, scalable CSS and
+                JavaScript interactions focused on user experience.</p>
+
+            <!-- Llamadas a la acción principales -->
             <div class="hero-actions">
+                <!-- Enlace interno a la sección de proyectos -->
                 <a class="btn btn-primary" href="#projects">View Projects</a>
-                <a class="btn btn-ghost" href="https://github.com/notevan404" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <!-- Enlace externo al perfil de GitHub (nueva pestaña segura) -->
+                <a class="btn btn-ghost" href="https://github.com/notevan404" target="_blank"
+                    rel="noopener noreferrer">GitHub</a>
             </div>
         </section>
 
+        <!-- Sección de descripción personal -->
         <section id="about" class="panel reveal">
             <h2>About Me</h2>
-            <p>My main goal is to grow as a frontend developer through real projects, improving visual design, accessibility and interface performance with clean and maintainable code.</p>
+            <p>I am currently completing a Master's in Programming and Application Development, with the goal of
+                starting my career as a Junior Frontend Developer and contributing to real products.</p>
+            <p>I am passionate about video games, music and software development. Right now I am learning Spring
+                Boot, REST APIs, SQL, Angular and TypeScript, and applying that knowledge through personal projects.</p>
         </section>
 
+        <!-- Sección de tecnologías usadas -->
         <section id="technologies" class="panel reveal">
             <h2>Technologies</h2>
             <p>Frontend stack I am currently using:</p>
+
+            <!-- Cuadrícula de tarjetas de tecnologías -->
             <div class="tech-grid">
+                <!-- Tarjeta: HTML -->
                 <article class="tech-card">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/500px-HTML5_logo_and_wordmark.svg.png" alt="HTML logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/500px-HTML5_logo_and_wordmark.svg.png"
+                        alt="HTML logo">
                     <h3>HTML</h3>
                 </article>
+
+                <!-- Tarjeta: CSS -->
                 <article class="tech-card">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/500px-CSS3_logo_and_wordmark.svg.png" alt="CSS logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/500px-CSS3_logo_and_wordmark.svg.png"
+                        alt="CSS logo">
                     <h3>CSS</h3>
                 </article>
+
+                <!-- Tarjeta: JavaScript -->
                 <article class="tech-card">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/500px-JavaScript-logo.png" alt="JavaScript logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/500px-JavaScript-logo.png"
+                        alt="JavaScript logo">
                     <h3>JavaScript</h3>
                 </article>
+
+                <!-- Tarjeta: TypeScript -->
                 <article class="tech-card">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Typescript.svg" alt="TypeScript logo">
                     <h3>TypeScript</h3>
@@ -68,17 +117,28 @@
             </div>
         </section>
 
+        <!-- Sección destinada a mostrar proyectos -->
         <section id="projects" class="panel reveal">
             <h2>Projects</h2>
         </section>
 
+        <!-- Sección de contacto con botón de correo -->
         <section id="contact" class="panel reveal">
             <h2>Contact</h2>
-            <p>If you want to collaborate or talk about a project, write me at:</p>
-            <a class="btn btn-primary" href="mailto:ivan23.dev@gmail.com">ivan23.dev@gmail.com</a>
+            <p>If you want to collaborate or talk about a project, you can reach me by email or LinkedIn.</p>
+            <p>Based in Spain (Madrid time, CET/CEST).</p>
+            <div class="contact-actions">
+                <!-- Enlace mailto para abrir el cliente de correo -->
+                <a class="btn btn-primary" href="mailto:ivan23.dev@gmail.com">ivan23.dev@gmail.com</a>
+                <!-- Enlace al perfil de LinkedIn -->
+                <a class="btn btn-ghost" href="https://www.linkedin.com/in/ivan-perez-403068357/" target="_blank"
+                    rel="noopener noreferrer">LinkedIn</a>
+            </div>
         </section>
     </main>
 
+    <!-- Script principal con interacciones (menú móvil + animaciones reveal) -->
     <script src="js/script.js"></script>
 </body>
+
 </html>
