@@ -1,292 +1,321 @@
-/* Reset básico para eliminar márgenes y paddings por defecto del navegador */
+:root {
+    --bg: #0f141f;
+    --panel: #182233;
+    --panel-soft: #202e45;
+    --text: #ecf2ff;
+    --muted: #9db0cf;
+    --accent: #ff7a18;
+    --accent-dark: #dc6612;
+    --line: rgba(255, 255, 255, 0.12);
+}
+
 * {
     margin: 0;
-    /* elimina margen por defecto */
     padding: 0;
-    /* elimina padding por defecto */
     box-sizing: border-box;
-    /* hace que padding y border no aumenten el tamaño del elemento */
 }
 
-/* Estilos generales del cuerpo de la página */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    /* fuente principal */
-    background-color: #0f172a;
-    /* color de fondo oscuro */
-    color: #e2e8f0;
-    /* color del texto */
+    font-family: "Space Grotesk", sans-serif;
+    background: radial-gradient(circle at 85% 10%, rgba(255, 122, 24, 0.2), transparent 35%), var(--bg);
+    color: var(--text);
     line-height: 1.6;
-    /* espacio entre líneas de texto */
-    padding: 40px;
-    /* espacio interno alrededor del contenido */
-    max-width: 1100px;
-    /* permite que el portfolio respire más en pantallas grandes */
-    margin: auto;
-    /* centra el contenido horizontalmente */
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
-/* Estilo del título principal */
-h1 {
-    font-size: 48px;
-    /* tamaño grande para el nombre */
-    margin-bottom: 10px;
-    /* espacio debajo del título */
+main {
+    width: min(1080px, 92%);
+    margin: 0 auto;
+    padding: 2rem 0 4rem;
 }
 
-/* Estilo de los subtítulos de sección */
-h2 {
-    margin-top: 40px;
-    /* espacio arriba del título */
-    margin-bottom: 15px;
-    /* espacio debajo del título */
-    color: #3b82f6;
-    /* color azul para destacar secciones */
+.bg-orb {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(50px);
+    z-index: -1;
+    pointer-events: none;
 }
 
-/* Estilo base de los enlaces (usados como botones) */
-a {
-    text-decoration: none;
-    /* elimina el subrayado de los enlaces */
-    color: white;
-    /* color del texto */
-    background: #3b82f6;
-    /* fondo azul */
-    padding: 10px 18px;
-    /* espacio interno del botón */
-    border-radius: 6px;
-    /* bordes redondeados */
-    margin-right: 10px;
-    /* separación entre botones */
-    display: inline-block;
-    /* permite aplicar padding correctamente */
-    margin-top: 15px;
-    /* espacio arriba del botón */
-
-    transition: all 0.2s ease;
-    /* animación suave para hover */
+.orb-1 {
+    width: 270px;
+    height: 270px;
+    left: -80px;
+    top: 14vh;
+    background: rgba(106, 182, 255, 0.24);
 }
 
-/* Estilo cuando pasas el ratón por encima del botón */
-a:hover {
-    background: #2563eb;
-    /* azul más oscuro */
-    transform: translateY(-2px);
-    /* mueve el botón ligeramente hacia arriba */
+.orb-2 {
+    width: 320px;
+    height: 320px;
+    right: -120px;
+    bottom: 6vh;
+    background: rgba(255, 122, 24, 0.2);
 }
 
-/* Separación entre las distintas secciones */
-section {
-    margin-top: 80px;
-    /* espacio vertical entre secciones */
-}
-
-/* Grid que contiene las tecnologías */
-.tech-grid {
-    display: grid;
-    /* activa CSS Grid */
-    grid-template-columns: repeat(2, 1fr);
-    /* crea 2 columnas del mismo tamaño */
-    gap: 20px;
-    /* espacio entre las tarjetas */
-    margin-top: 20px;
-    /* espacio arriba del grid */
-}
-
-/* Estilo de las imágenes de los logos */
-.tech-grid img {
-    width: 60px;
-    /* ancho fijo del logo */
-    height: 60px;
-    /* alto fijo del logo */
-    object-fit: contain;
-    /* mantiene la proporción de la imagen */
-    margin-bottom: 10px;
-    /* espacio entre el logo y el texto */
-}
-
-/* Estilo de cada tarjeta de tecnología */
-.tech-grid div {
-
-    background: #1e293b; /* fondo oscuro de la tarjeta */
-    padding: 25px; /* espacio interno */
-    border-radius: 8px; /* esquinas redondeadas */
-
-    border: 1px solid transparent; /* borde invisible inicialmente */
-
-    text-align: center; /* centra el texto */
-
-    display: flex; /* activa flexbox */
-    flex-direction: column; /* coloca elementos uno debajo del otro */
-    align-items: center; /* centra horizontalmente */
-    justify-content: center; /* centra verticalmente */
-
-    min-height: 140px; /* altura mínima de la tarjeta */
-
-    transition: transform 0.25s ease, box-shadow 0.25s ease, border 0.25s ease;
-    /* animación suave cuando ocurre hover */
-}
-
-/* Efecto cuando pasas el ratón por encima de una tarjeta */
-.tech-grid div:hover {
-
-    transform: translateY(-6px); /* la tarjeta sube ligeramente */
-
-    border: 1px solid #3b82f6; /* aparece un borde azul */
-
-    box-shadow: 0 10px 25px rgba(59,130,246,0.25);
-    /* crea una iluminación azul alrededor de la tarjeta */
-
-}
-/* Sección principal de presentación (hero) */
-#hero {
-    min-height: 70vh;
-    /* ocupa más espacio vertical para parecer una landing */
-    display: flex;
-    /* usa flexbox */
-    flex-direction: column;
-    /* coloca elementos en columna */
-    justify-content: center;
-    /* centra verticalmente el contenido */
-    align-items: center;
-    /* centra horizontalmente el contenido */
-    text-align: center;
-    /* centra el texto */
-    gap: 10px;
-    /* añade espacio entre los elementos internos */
-    margin-bottom: 100px;
-    /* espacio debajo del hero */
-    /* gradiente radial suave detrás del contenido */
-    background: radial-gradient(circle at top,
-            rgba(59, 130, 246, 0.15),
-            transparent 70%);
-
-    border-radius: 12px;
-    /* bordes redondeados para que el bloque se vea como una sección */
-    padding: 40px;
-    /* espacio interno para que el contenido respire */
-}
-
-/* Ajuste específico del título dentro del hero */
-#hero h1 {
-    font-size: 64px;
-    /* aumentamos el tamaño del nombre */
-    font-weight: 700;
-    /* lo hacemos más fuerte visualmente */
-}
-
-/* Ajuste del subtítulo */
-#hero h2 {
-    font-size: 28px;
-    /* tamaño intermedio */
-    margin-top: 10px;
-    /* separación respecto al nombre */
-    color: #94a3b8;
-    /* color gris claro para diferenciar del título */
-}
-
-/* Ajuste del texto descriptivo */
-#hero p {
-    margin-top: 15px;
-    /* espacio entre subtítulo y descripción */
-    font-size: 18px;
-    /* texto ligeramente más grande */
-}
-
-/* Mejora de los botones dentro del hero */
-#hero a {
-    padding: 12px 22px;
-    /* botones un poco más grandes */
-    font-weight: 600;
-    /* texto más fuerte */
-}
-
-/* Estilo general de la barra de navegación */
-nav {
+.site-header {
     position: sticky;
-    /* hace que la barra se quede fija arriba al hacer scroll */
     top: 0;
-    /* indica que se pega a la parte superior de la pantalla */
+    z-index: 20;
+    backdrop-filter: blur(8px);
+    background: rgba(15, 20, 31, 0.75);
+    border-bottom: 1px solid var(--line);
+}
 
-    background: #0f172a;
-    /* mismo color que el fondo para integrarla */
-
-    padding: 20px 0;
-    /* espacio vertical dentro de la barra */
-
+.main-nav {
+    width: min(1080px, 92%);
+    margin: 0 auto;
+    min-height: 72px;
     display: flex;
-    /* activa flexbox para alinear elementos */
-    justify-content: center;
-    /* centra los enlaces horizontalmente */
-    gap: 25px;
-    /* espacio entre cada enlace */
-
-    z-index: 100;
-    /* asegura que la barra quede por encima de otros elementos */
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
 }
 
-/* Estilo base de los enlaces dentro del nav */
-nav a {
-    color: #e2e8f0;
-    /* color claro para el texto */
+.brand {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 1rem;
+    color: var(--text);
     text-decoration: none;
-    /* elimina el subrayado clásico de los links */
-    font-weight: 500;
-    /* hace el texto un poco más grueso */
-    position: relative;
-    /* necesario para poder posicionar la línea animada */
-    padding-bottom: 5px;
-    /* pequeño espacio debajo del texto */
+    letter-spacing: 0.03em;
 }
 
-/* Creamos una línea invisible debajo del enlace */
-nav a::after {
-    content: "";
-    /* crea un pseudo-elemento */
-    position: absolute;
-    /* lo posicionamos respecto al enlace */
-    left: 0;
-    /* empieza desde la izquierda */
-    bottom: 0;
-    /* se coloca justo debajo del texto */
-
-    width: 0%;
-    /* inicialmente la línea tiene ancho 0 (invisible) */
-    height: 2px;
-    /* grosor de la línea */
-
-    background: #3b82f6;
-    /* color azul del tema */
-
-    transition: width 0.25s ease;
-    /* animación suave cuando cambia el ancho */
+.nav-links {
+    display: flex;
+    gap: 1.1rem;
 }
 
-/* Cuando pasas el ratón por encima del enlace */
-nav a:hover::after {
-    width: 100%;
-    /* la línea se expande hasta cubrir todo el enlace */
+.nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
 }
 
+.nav-links a:hover {
+    color: var(--text);
+}
 
+.menu-toggle {
+    display: none;
+    border: 1px solid var(--line);
+    background: transparent;
+    color: var(--text);
+    padding: 0.4rem 0.7rem;
+    border-radius: 8px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
 
+section {
+    margin-top: 3rem;
+}
 
+.hero {
+    min-height: 72vh;
+    display: grid;
+    align-content: center;
+    gap: 0.8rem;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: clamp(1.5rem, 3vw, 3rem);
+    background: linear-gradient(155deg, rgba(32, 46, 69, 0.9), rgba(24, 34, 51, 0.88));
+}
 
-/* Adaptación para pantallas pequeñas (móviles) */
-@media (max-width: 600px) {
+.hero-label {
+    font-family: "IBM Plex Mono", monospace;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.8rem;
+}
 
-  body {
-    padding: 20px; /* menos espacio lateral en móvil */
-  }
+h1 {
+    font-size: clamp(2.4rem, 8vw, 5.1rem);
+    line-height: 1;
+}
 
-  /* las tecnologías pasan a una sola columna */
-  .tech-grid {
-    grid-template-columns: 1fr;
-  }
+.hero h2 {
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    color: #d5e3ff;
+    max-width: 22ch;
+}
 
-  /* ajustamos el tamaño del título */
-  #hero h1 {
-    font-size: 48px;
-  }
+.hero-copy {
+    color: var(--muted);
+    max-width: 60ch;
+}
 
+.hero-actions {
+    margin-top: 0.8rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.7rem 1.1rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    color: #151515;
+    background: var(--accent);
+}
+
+.btn-primary:hover {
+    background: var(--accent-dark);
+}
+
+.btn-ghost {
+    color: var(--text);
+    border: 1px solid var(--line);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+h2 {
+    font-size: clamp(1.4rem, 2.2vw, 2rem);
+    margin-bottom: 0.6rem;
+}
+
+.panel {
+    border-radius: 18px;
+    border: 1px solid var(--line);
+    background: rgba(24, 34, 51, 0.8);
+    padding: clamp(1rem, 2.5vw, 2rem);
+}
+
+.panel p {
+    color: var(--muted);
+    max-width: 70ch;
+}
+
+.tech-grid {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(180px, 1fr));
+    gap: 0.9rem;
+}
+
+.tech-card {
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1rem;
+    background: var(--panel-soft);
+    display: grid;
+    place-items: center;
+    text-align: center;
+    gap: 0.6rem;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.tech-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 122, 24, 0.75);
+}
+
+.tech-card img {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+}
+
+.project-grid {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(230px, 1fr));
+    gap: 1rem;
+}
+
+.project-card {
+    background: var(--panel-soft);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1rem;
+}
+
+.project-tag {
+    font-family: "IBM Plex Mono", monospace;
+    color: var(--accent);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.project-card h3 {
+    margin: 0.35rem 0;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 760px) {
+    .menu-toggle {
+        display: inline-block;
+    }
+
+    .nav-links {
+        position: absolute;
+        right: 4%;
+        top: 64px;
+        display: grid;
+        gap: 0.2rem;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: #111a2a;
+        padding: 0.5rem;
+        min-width: 160px;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-8px);
+        transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .nav-links.open {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+    .nav-links a {
+        border-radius: 8px;
+        padding: 0.4rem;
+    }
+
+    .nav-links a:hover {
+        background: rgba(255, 255, 255, 0.06);
+    }
+
+    .hero {
+        min-height: 60vh;
+    }
+
+    .tech-grid,
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
 }
