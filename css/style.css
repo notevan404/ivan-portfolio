@@ -249,6 +249,44 @@ h1 {
     font-weight: 700;
 }
 
+/* Etiquetas informativas dentro del hero para reforzar perfil */
+.hero-highlights {
+    margin-top: 0.3rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+}
+
+/* Chip decorativo con información clave */
+.hero-pill {
+    display: inline-flex;
+    align-items: center;
+    border: 2px solid var(--border);
+    border-radius: 999px;
+    padding: 0.28rem 0.72rem;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    color: var(--ink);
+    background: var(--panel-alt);
+}
+
+.hero-pill:nth-child(1) {
+    background: var(--accent-green);
+    transform: rotate(-1deg);
+}
+
+.hero-pill:nth-child(2) {
+    background: var(--accent-yellow);
+    transform: rotate(1deg);
+}
+
+.hero-pill:nth-child(3) {
+    background: #ffe7f2;
+    transform: rotate(-1.5deg);
+}
+
 /* Fila de botones del hero */
 .hero-actions {
     margin-top: 0.8rem;
@@ -440,6 +478,14 @@ h2 {
     /* Ajusta altura mínima del hero en móvil */
     .hero {
         min-height: 62vh;
+    }
+
+    .hero-highlights {
+        gap: 0.45rem;
+    }
+
+    .hero-pill {
+        font-size: 0.69rem;
     }
 
     /* Reubica badge inferior para no salir del contenedor */
