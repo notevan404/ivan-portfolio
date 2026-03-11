@@ -502,6 +502,74 @@ h2 {
     object-fit: contain;
 }
 
+/* Grid para tarjetas de proyectos */
+.project-grid {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(240px, 1fr));
+    gap: 1rem;
+}
+
+/* Tarjeta individual de proyecto */
+.project-card {
+    background: var(--panel-alt);
+    border: 2px solid var(--border);
+    border-radius: 18px;
+    padding: 1rem;
+    text-align: left;
+    display: grid;
+    gap: 0.65rem;
+    box-shadow: 4px 4px 0 rgba(24, 32, 51, 0.2);
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px) rotate(-0.6deg);
+    box-shadow: 7px 7px 0 rgba(24, 32, 51, 0.24);
+}
+
+.project-kicker {
+    display: inline-flex;
+    width: fit-content;
+    border: 2px solid var(--border);
+    border-radius: 999px;
+    padding: 0.2rem 0.55rem;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--ink);
+    background: var(--accent-yellow);
+}
+
+.project-card h3 {
+    font-size: 1.15rem;
+    margin: 0;
+}
+
+.project-card p {
+    margin: 0;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+}
+
+.project-tags span {
+    border: 2px solid var(--border);
+    border-radius: 999px;
+    padding: 0.2rem 0.55rem;
+    background: #d9ecff;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.72rem;
+    font-weight: 700;
+}
+
+.project-actions {
+    margin-top: 0.2rem;
+}
+
 /* Estado inicial para animación de aparición al hacer scroll */
 .reveal {
     opacity: 0;
@@ -630,6 +698,11 @@ h2 {
 
     /* En móvil, una sola columna de tecnologías */
     .tech-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* En móvil, proyectos a una columna */
+    .project-grid {
         grid-template-columns: 1fr;
     }
 

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#6bf3ff">
+    <title>Decision Spinner</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+    <!-- Título principal del mini proyecto -->
+    <h1>Decision Spinner</h1>
+
+    <main class="app-shell">
+        <!-- Fila de input + botón Add -->
+        <section class="top-controls">
+            <!-- Etiqueta para accesibilidad (está oculta visualmente con CSS) -->
+            <label class="sr-only" for="optionInput">Escribe una opción para la ruleta</label>
+            <input id="optionInput" placeholder="Write an option" autocomplete="off">
+            <button id="addButton" type="button" onclick="addOption()">Add</button>
+        </section>
+
+        <!-- Aquí se muestran las chips con los nombres añadidos -->
+        <div id="options"></div>
+
+        <!-- Fila de botones de acción -->
+        <section class="action-controls">
+            <!-- Botón que gira la ruleta -->
+            <button id="spinButton" type="button" onclick="spinDecision()">Spin</button>
+
+            <!-- Botón para limpiar todas las opciones -->
+            <button id="clearButton" type="button" onclick="clearOptions()">Clear</button>
+        </section>
+
+        <!-- Zona de ruleta -->
+        <div class="wheel-container">
+
+            <!-- Flecha fija que marca el sector ganador -->
+            <div class="pointer"></div>
+
+            <!-- Rueda que gira -->
+            <div id="wheel">
+                <div id="wheel-labels"></div>
+            </div>
+
+        </div>
+
+        <!-- Leyenda extra para cuando hay demasiados nombres -->
+        <div id="wheelLegend" aria-live="polite"></div>
+
+        <!-- Resultado de la tirada -->
+        <h2 id="result" aria-live="polite"></h2>
+
+        <!-- Historial de ganadores -->
+        <h3>History</h3>
+        <ul id="history"></ul>
+    </main>
+
+
+    <!-- Audio de "tic" mientras gira (si existe el archivo) -->
+    <audio id="tickSound" src="tick.mp3" preload="auto"></audio>
+
+    <!-- Lógica del proyecto -->
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
