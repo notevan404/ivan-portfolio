@@ -19,17 +19,17 @@ const TOTAL_OBJECTS = 6;
 /*  cORTE DEL LOOP */
 
 const dialogues = {
-   pc: "Aquí es donde paso gran parte de mi tiempo...\nMe encanta aprender y crear cosas desde cero ",
+    pc: "This is where I spend most of my time...\nI love learning new things and building ideas from scratch ",
 
-    coffee: "Curiosamente solo bebo café descafeinado… pero aun así no puede faltar mientras trabajo ",
+    coffee: "Fun fact: I only drink decaf coffee… but I still can't work without it ",
 
-    poster: "Desde pequeño, Japón siempre ha sido un sueño para mí. Me encanta su cultura, el anime y los videojuegos :) ",
+    poster: "Since I was a kid, Japan has always been a dream of mine. I love its culture, anime and video games :) ",
 
-    snes: "También me gusta desconectar jugando de vez en cuando. Siempre vuelvo a lo clásico ",
+    snes: "I also like to disconnect by playing games from time to time. I always come back to the classics ",
 
-    window: "Me encantan los atardeceres… tienen algo que hace que todo se detenga por un momento ",
+    window: "I love sunsets… there's something about them that makes everything slow down for a moment ",
 
-    bed: "No soy muy fan de dormir demasiado… siento que hay muchas cosas que hacer "
+    bed: "I'm not a big fan of sleeping too much… it feels like there's always something to do "
 };
 
 /* TEXTO */
