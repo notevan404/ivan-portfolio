@@ -727,3 +727,8 @@ h2 {
         box-shadow: 0 0 0 0 rgba(114, 241, 167, 0);
     }
 }
+
+.featured-project {
+    border: 3px solid var(--accent-pink);
+    transform: scale(1.02);
+}
