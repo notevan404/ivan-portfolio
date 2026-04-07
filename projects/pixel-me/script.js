@@ -16,7 +16,7 @@ let discovered = new Set();
 
 const TOTAL_OBJECTS = 6;
 
-/* 🎶 PUNTO DE CORTE DEL LOOP (AJUSTA ESTO) */
+/*  cORTE DEL LOOP */
 
 const dialogues = {
    pc: "Aquí es donde paso gran parte de mi tiempo...\nMe encanta aprender y crear cosas desde cero ",
@@ -32,7 +32,7 @@ const dialogues = {
     bed: "No soy muy fan de dormir demasiado… siento que hay muchas cosas que hacer "
 };
 
-/* ✨ TEXTO */
+/* TEXTO */
 function typeText(message) {
     if (isTyping) return;
 
@@ -54,7 +54,7 @@ function typeText(message) {
     }, 25);
 }
 
-/* 👀 MIRAR */
+/* FUNCION PARA QUE MIRE */
 function lookAt(direction) {
     const base = "translateX(-50%) scale(4)";
     character.style.transform =
@@ -63,28 +63,28 @@ function lookAt(direction) {
             : `${base} scaleX(-1)`;
 }
 
-/* 📍 DIRECCIÓN */
+/* DIRECCIÓN */
 function getDirection(element) {
     const rect = element.getBoundingClientRect();
     const charRect = character.getBoundingClientRect();
     return rect.left > charRect.left ? "right" : "left";
 }
 
-/* 🎮 INTERACCIÓN */
+/* INTERACCIÓN */
 function interact(element, dialogue, id) {
     const dir = getDirection(element);
 
     lookAt(dir);
     typeText(dialogue);
 
-    // 🔊 sonido (RESPETA MUTE)
+    // sonido (RESPETA MUTE)
     if (!isMuted && clickSound) {
         clickSound.currentTime = 0;
         clickSound.volume = 0.5;
         clickSound.play().catch(() => { });
     }
 
-    // 📊 progreso
+    // rogreso
     discovered.add(id);
 
     if (discovered.size === TOTAL_OBJECTS) {
@@ -93,7 +93,7 @@ function interact(element, dialogue, id) {
         }, 2000);
     }
 
-    // ⏱ reset mirada
+    // reset mirada
     if (lookTimeout) clearTimeout(lookTimeout);
 
     lookTimeout = setTimeout(() => {
@@ -115,13 +115,13 @@ function fadeLoop() {
         if (currentStep >= fadeSteps) {
             clearInterval(fadeOut);
 
-            // 🔁 reiniciar canción
+            // reiniciar canción
             bgMusic.currentTime = 0;
 
-            // 👇 IMPORTANTE: resetear volumen a 0 antes de subir
+            // resetear volumen a 0 antes de subir
             bgMusic.volume = 0;
 
-            // 🔊 fade in (usando volumen base fijo)
+            // fade in 
             let fadeInStep = 0;
             const volumeStep = BASE_VOLUME / fadeSteps;
 
@@ -140,7 +140,7 @@ function fadeLoop() {
             return;
         }
 
-        // 👇 bajamos hacia 0 (no relativo)
+        // bajamos hacia 0 
         bgMusic.volume = Math.max(
             0,
             bgMusic.volume - (BASE_VOLUME / fadeSteps)
@@ -160,7 +160,7 @@ function fadeLoop() {
     }
 });
 
-/* 🎮 ANIMACIÓN IDLE */
+/* ANIMACIÓN IDLE */
 const frames = [
     "assets/idle_1.png",
     "assets/idle_2.png",
@@ -175,7 +175,7 @@ setInterval(() => {
     frameIndex = (frameIndex + 1) % frames.length;
 }, 200);
 
-/* 🎶 INICIAR MÚSICA */
+/* INICIAR MÚSICA */
 document.addEventListener("click", () => {
     if (bgMusic && bgMusic.paused) {
         bgMusic.volume = 0.4; // 🔥 mejor nivel
@@ -183,7 +183,7 @@ document.addEventListener("click", () => {
     }
 }, { once: true });
 
-/* 🔁 LOOP PERSONALIZADO (SIN SILENCIO) */
+/* LOOP  */
 if (bgMusic) {
     bgMusic.addEventListener("timeupdate", () => {
         if (bgMusic.currentTime >= LOOP_END && !isFading) {
@@ -192,7 +192,7 @@ if (bgMusic) {
     });
 }
 
-/* 🔇 MUTE */
+/* MUTE */
 if (muteBtn) {
     muteBtn.addEventListener("click", () => {
         isMuted = !isMuted;
